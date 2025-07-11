@@ -1,0 +1,6 @@
+<h1><%= @goal.name %></h1>
+
+<%= link_to "Back", goals_path %>
+<%= link_to "Edit", edit_goal_path(@goal) %>
+
+<%= button_to "Delete Goal", @goal, method: :delete, data: { turbo_confirm: "Are you sure?" } %>

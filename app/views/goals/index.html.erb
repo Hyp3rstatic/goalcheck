@@ -1,0 +1,15 @@
+<h1>Goals</h1>
+
+<%= link_to "New Goal", new_goal_path %>
+
+<br>
+
+<div id="goals">
+  <% @goals.each do |goal| %>
+    <div>
+      <a href="/goals/<%= goal.id %>">
+        <%= link_to goal.name, goal %>
+      </a>
+    </div>
+  <% end %>
+</div>

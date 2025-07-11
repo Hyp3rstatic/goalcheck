@@ -1,0 +1,20 @@
+<%= form_with model: goal do |form| %>
+    <div>
+        <%= form.label :name %>
+        <%= form.text_field :name %>
+    </div>
+
+    <br>
+
+    <div>
+        <%= form.label :status %>
+        <%= form.text_field :status %>
+    </div>
+
+    <br>
+
+    <div>
+        <%= form.submit %>
+    </div>
+
+<% end %>
