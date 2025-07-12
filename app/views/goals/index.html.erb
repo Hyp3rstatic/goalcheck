@@ -1,8 +1,9 @@
 <h1>Goals</h1>
 
-<%= link_to "New Goal", new_goal_path %>
-
-<br>
+<% if authenticated? %>
+    <%= link_to "New Goal", new_goal_path if authenticated? %>
+    <br>
+<% end %>
 
 <div id="goals">
   <% @goals.each do |goal| %>

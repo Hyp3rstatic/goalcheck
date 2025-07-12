@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resource :session
+  resources :passwords, param: :token
   get "goals/index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -13,5 +15,5 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   resources :goals
-  root "product#index"
+  root "goals#index"
 end

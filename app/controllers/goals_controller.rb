@@ -1,5 +1,7 @@
 class GoalsController < ApplicationController
 
+  allow_unauthenticated_access only: %i[ index show ]
+
   before_action :set_goal, only: %i[ show edit update destroy ]
 
   def index
