@@ -16,4 +16,5 @@ Rails.application.routes.draw do
   # root "posts#index"
   resources :goals
   root "goals#index"
+  #delete 'images/:id/delete_attachment', to: 'my#delete_image_attachment', as: :delete_image_attachmen
 end

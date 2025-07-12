@@ -1,22 +1,18 @@
 <% cache @goal do %>
-    <h1><%= @goal.name %></h1>
-    <%# line 1 displays object's cache key; line 2 displays block's cache key %>
-    <%#= @goal.cache_key %>
-    <%#= cache_fragment_name(@goal) %>
+    <h2>Goal: <%= @goal.name %></h2>
+    <%= link_to "Back", goals_path %>
+    <% if authenticated? %>
+        <%= link_to "Edit", edit_goal_path(@goal) %>
+        <br>
+    <% end %>
+    <br>
+    <%= @goal.description %>
+    <span>Status:</span>
+    <%= @goal.status %>
 <% end %>
 
-<%= link_to "Back", goals_path %>
-
-<% if authenticated? %>
-    <%= link_to "Edit", edit_goal_path(@goal) %>
-<% end %>
-
-<br>
-<span>Status:</span>
-<%= @goal.status %>
+<%= image_tag @goal.featured_image if @goal.featured_image.attached? %>
 
 <% if authenticated? %>
     <%= button_to "Delete Goal", @goal, method: :delete, data: { turbo_confirm: "Are you sure?" } %>
 <% end %>
-
-
